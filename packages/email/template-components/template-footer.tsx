@@ -24,7 +24,6 @@ export const TemplateFooter = ({ isDocument = true, reportUrl }: TemplateFooterP
             <Link className="text-primary" href={reportUrl}>
               Click here to report the sender
             </Link>
-            . Never sign a document you don't recognize or weren't expecting.
           </Trans>
         </Text>
       )}
@@ -33,8 +32,8 @@ export const TemplateFooter = ({ isDocument = true, reportUrl }: TemplateFooterP
         <Text className="my-4 text-base text-muted-foreground">
           <Trans>
             This document was sent using{' '}
-            <Link className="text-primary" href="https://documen.so/mail-footer">
-              Documenso
+            <Link className="text-primary" href="https://firmaprivada.bo">
+              FirmaPrivada.bo
             </Link>
             .
           </Trans>
@@ -43,7 +42,7 @@ export const TemplateFooter = ({ isDocument = true, reportUrl }: TemplateFooterP
 
       {branding.brandingEnabled && branding.brandingCompanyDetails && (
         <Text className="my-8 text-muted-foreground text-sm">
-          {branding.brandingCompanyDetails.split('\n').map((line, idx) => {
+          {branding.brandingCompanyDetails.split('\\n').map((line, idx) => {
             return (
               <Fragment key={idx}>
                 {idx > 0 && <br />}
@@ -63,11 +62,7 @@ export const TemplateFooter = ({ isDocument = true, reportUrl }: TemplateFooterP
       )}
 
       {!branding.brandingEnabled && (
-        <Text className="my-8 text-muted-foreground text-sm">
-          Documenso, Inc.
-          <br />
-          2261 Market Street, #5211, San Francisco, CA 94114, USA
-        </Text>
+        <Text className="my-8 text-muted-foreground text-sm">FirmaPrivada.bo</Text>
       )}
     </Section>
   );
