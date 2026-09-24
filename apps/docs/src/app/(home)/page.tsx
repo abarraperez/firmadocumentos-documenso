@@ -237,7 +237,7 @@ export default function HomePage() {
             GitHub
           </a>
           <a
-            href="https://documen.so/discord"
+            href="https://firmaprivada.bo/support"
             className="inline-flex items-center gap-2 rounded-lg border bg-fd-background px-4 py-2 font-medium text-sm transition-colors hover:bg-fd-accent"
           >
             <svg className="size-4" viewBox="0 0 24 24" fill="currentColor">

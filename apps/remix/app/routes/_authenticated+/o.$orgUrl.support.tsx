@@ -51,7 +51,7 @@ export default function SupportPage() {
             <h2 className="flex items-center gap-2 font-bold text-lg">
               <BookIcon className="h-5 w-5 text-muted-foreground" />
               <Link
-                to="https://docs.documenso.com"
+                to="https://firmaprivada.bo/docs"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="hover:underline"
@@ -60,33 +60,33 @@ export default function SupportPage() {
               </Link>
             </h2>
             <p className="mt-1 text-muted-foreground">
-              <Trans>Read our documentation to get started with Documenso.</Trans>
+              <Trans>Read our documentation to get started with FirmaPrivada.bo.</Trans>
             </p>
           </div>
           <div className="rounded-lg border p-4">
             <h2 className="flex items-center gap-2 font-bold text-lg">
               <Link2Icon className="h-5 w-5 text-muted-foreground" />
               <Link
-                to="https://documen.so/discord"
+                to="https://firmaprivada.bo/support"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="hover:underline"
               >
-                <Trans>Discord</Trans>
+                <Trans>Soporte</Trans>
               </Link>
             </h2>
             <p className="mt-1 text-muted-foreground">
               <Trans>
-                Join our community on{' '}
+                Contact support at{' '}
                 <Link
-                  to="https://documen.so/discord"
+                  to="https://firmaprivada.bo/support"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="hover:underline"
                 >
-                  Discord
+                  FirmaPrivada.bo
                 </Link>{' '}
-                for community support and discussion.
+                for support and assistance.
               </Trans>
             </p>
           </div>
