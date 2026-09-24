@@ -1,4 +1,5 @@
 import { useCurrentEnvelopeRender } from '@documenso/lib/client-only/providers/envelope-render-provider';
+import { NEXT_PUBLIC_WEBAPP_URL } from '@documenso/lib/constants/app';
 import { PDF_VIEWER_ERROR_MESSAGES } from '@documenso/lib/constants/pdf-viewer-i18n';
 import { mapSecondaryIdToDocumentId } from '@documenso/lib/utils/envelope';
 import { cn } from '@documenso/ui/lib/utils';
@@ -27,6 +28,7 @@ import { SignFieldInitialsDialog } from '~/components/dialogs/sign-field-initial
 import { SignFieldNameDialog } from '~/components/dialogs/sign-field-name-dialog';
 import { SignFieldNumberDialog } from '~/components/dialogs/sign-field-number-dialog';
 import { SignFieldSignatureDialog } from '~/components/dialogs/sign-field-signature-dialog';
+import { WHITE_LABEL } from '~/lib/white-label';
 import { SignFieldTextDialog } from '~/components/dialogs/sign-field-text-dialog';
 import { useEmbedSigningContext } from '~/components/embed/embed-signing-context';
 import { EnvelopeSignerPageRenderer } from '~/components/general/envelope-signing/envelope-signer-page-renderer';
@@ -283,7 +285,7 @@ export const DocumentSigningPageViewV2 = () => {
 
               {!hidePoweredBy && (
                 <a
-                  href="https://documenso.com"
+                  href={WHITE_LABEL.url || NEXT_PUBLIC_WEBAPP_URL()}
                   target="_blank"
                   className="fixed right-0 bottom-0 z-40 hidden cursor-pointer rounded-tl bg-primary px-2 py-1 font-medium text-primary-foreground text-xs opacity-60 hover:opacity-100 lg:block"
                   rel="noopener"

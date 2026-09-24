@@ -8,7 +8,7 @@ import { readCscSadSessionFromRequest } from '@documenso/ee/server-only/signing/
 import { readCscServiceSessionFromRequest } from '@documenso/ee/server-only/signing/csc/cookies/service-session-cookie';
 import { EnvelopeRenderProvider } from '@documenso/lib/client-only/providers/envelope-render-provider';
 import { useOptionalSession } from '@documenso/lib/client-only/providers/session';
-import { IS_INSTANCE_CSC_MODE } from '@documenso/lib/constants/app';
+import { IS_INSTANCE_CSC_MODE, NEXT_PUBLIC_WEBAPP_URL } from '@documenso/lib/constants/app';
 import { AppError, AppErrorCode } from '@documenso/lib/errors/app-error';
 import { loadRecipientBrandingByTeamId } from '@documenso/lib/server-only/branding/load-recipient-branding';
 import { getDocumentAndSenderByToken } from '@documenso/lib/server-only/document/get-document-by-token';
@@ -47,6 +47,7 @@ import { DocumentSigningPageViewV2 } from '~/components/general/document-signing
 import { DocumentSigningProvider } from '~/components/general/document-signing/document-signing-provider';
 import { EnvelopeSigningProvider } from '~/components/general/document-signing/envelope-signing-provider';
 import { RecipientBranding } from '~/components/general/recipient-branding';
+import { WHITE_LABEL } from '~/lib/white-label';
 import { useCspNonce } from '~/utils/nonce';
 import { superLoaderJson, useSuperLoaderData } from '~/utils/super-json-loader';
 
@@ -454,8 +455,8 @@ const SigningPageV1 = ({ data }: { data: Awaited<ReturnType<typeof handleV1Loade
             <p className="mt-36 text-muted-foreground/60 text-sm">
               <Trans>
                 Want to send slick signing links like this one?{' '}
-                <Link to="https://documenso.com" className="text-documenso-700 hover:text-documenso-600">
-                  Check out Documenso
+                <Link to={WHITE_LABEL.url || NEXT_PUBLIC_WEBAPP_URL()} className="text-documenso-700 hover:text-documenso-600">
+                  Check out {WHITE_LABEL.name}
                 </Link>
                 .
               </Trans>
@@ -553,8 +554,8 @@ const SigningPageV2 = ({ data }: { data: Awaited<ReturnType<typeof handleV2Loade
             <p className="mt-36 text-muted-foreground/60 text-sm">
               <Trans>
                 Want to send slick signing links like this one?{' '}
-                <Link to="https://documenso.com" className="text-documenso-700 hover:text-documenso-600">
-                  Check out Documenso
+                <Link to={WHITE_LABEL.url || NEXT_PUBLIC_WEBAPP_URL()} className="text-documenso-700 hover:text-documenso-600">
+                  Check out {WHITE_LABEL.name}
                 </Link>
                 .
               </Trans>

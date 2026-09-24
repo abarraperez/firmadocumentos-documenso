@@ -3,6 +3,7 @@ import { getDocumentByAccessToken } from '@documenso/lib/server-only/document/ge
 import { redirect, useLoaderData } from 'react-router';
 
 import { DocumentCertificateQRView } from '~/components/general/document/document-certificate-qr-view';
+import { WHITE_LABEL } from '~/lib/white-label';
 
 import type { Route } from './+types/share.$slug';
 
@@ -12,15 +13,15 @@ export function meta({ params: { slug } }: Route.MetaArgs) {
   }
 
   return [
-    { title: 'Documenso - Share' },
-    { description: 'I just signed a document in style with Documenso!' },
+    { title: 'FirmaPrivada.bo - Share' },
+    { description: 'I just signed a document in style with FirmaPrivada.bo!' },
     {
       property: 'og:title',
-      content: 'Documenso - Join the open source signing revolution',
+      content: 'FirmaPrivada.bo — Firma electrónica',
     },
     {
       property: 'og:description',
-      content: 'I just signed with Documenso!',
+      content: 'I just signed with FirmaPrivada.bo!',
     },
     {
       property: 'og:type',
@@ -32,7 +33,7 @@ export function meta({ params: { slug } }: Route.MetaArgs) {
     },
     {
       name: 'twitter:site',
-      content: '@documenso',
+      content: '@firmaprivada',
     },
     {
       name: 'twitter:card',
@@ -44,7 +45,7 @@ export function meta({ params: { slug } }: Route.MetaArgs) {
     },
     {
       name: 'twitter:description',
-      content: 'I just signed with Documenso!',
+      content: 'I just signed with FirmaPrivada.bo!',
     },
   ];
 }
@@ -69,8 +70,8 @@ export const loader = async ({ request, params: { slug } }: Route.LoaderArgs) =>
     return {};
   }
 
-  // Is hardcoded because this whole meta is hardcoded anyway for Documenso.
-  throw redirect('https://documenso.com');
+  // Is hardcoded because this whole meta is hardcoded anyway for the client.
+  throw redirect(WHITE_LABEL.url || NEXT_PUBLIC_WEBAPP_URL());
 };
 
 export default function SharePage() {
