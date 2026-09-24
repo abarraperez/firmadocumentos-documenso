@@ -72,5 +72,13 @@ scripts/bench-*
 # tmp
 tmp/
 
+# FirmaPrivada local secrets — nunca commitear
+certificate.crt
+certificate.p12
+private.key
+*.p12
+docker-compose.yml
+SETUP_LOCAL.md
+
 # opencode
 .opencode/package-lock.json

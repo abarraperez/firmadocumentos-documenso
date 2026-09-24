@@ -79,7 +79,12 @@ COPY --from=builder /app/out/full/ .
 # Finally copy the turbo.json file so that we can run turbo commands
 COPY turbo.json turbo.json
 
+# ... (todo lo que ya está antes, no lo toques)
+
 RUN npm install -g "turbo@^1.9.3"
+
+# Le da a Node más heap disponible — Docker tiene 7.9GB, dejamos margen
+ENV NODE_OPTIONS="--max-old-space-size=6144"
 
 RUN turbo run build --filter=@documenso/remix...
 
